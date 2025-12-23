@@ -48,8 +48,39 @@
     <main class="main">
       <section class="field-wrap">
         <div class="field" id="field">
-          <div class="endzone left"><span>CHIEFS</span></div>
-          <div class="endzone right"><span>BRONCOS</span></div>
+          <!-- Ribbon board -->
+          <div class="ribbon" id="ribbon">
+            <div class="ribbon-text" id="ribbonText">WELCOME TO CARTOON DICE FOOTBALL</div>
+          </div>
+
+          <!-- Endzones -->
+          <div class="endzone left" id="ezHome"><span>CHIEFS</span></div>
+          <div class="endzone right" id="ezAway"><span>BRONCOS</span></div>
+
+          <!-- Goal posts -->
+          <div class="goalpost left" aria-hidden="true">
+            <div class="gp-base"></div>
+            <div class="gp-upright"></div>
+          </div>
+          <div class="goalpost right" aria-hidden="true">
+            <div class="gp-base"></div>
+            <div class="gp-upright"></div>
+          </div>
+
+          <!-- Sidelines -->
+          <div class="sideline top" aria-hidden="true">
+            <div class="bench-row"></div>
+            <div class="coach-box"></div>
+            <div class="sideline-shadows"></div>
+          </div>
+          <div class="sideline bottom" aria-hidden="true">
+            <div class="bench-row"></div>
+            <div class="coach-box"></div>
+            <div class="sideline-shadows"></div>
+          </div>
+
+          <!-- Weather layer -->
+          <div class="weather-layer" id="weatherLayer" aria-hidden="true"></div>
 
           <!-- NEW: Field visuals -->
           <div class="field-visuals" aria-hidden="true">
@@ -59,6 +90,7 @@
               <div class="mf-badge">KC</div>
               <div class="mf-ring"></div>
             </div>
+            <div class="redzone-tint" id="redzoneTint"></div>
           </div>
 
           <div class="yardlines" id="yardlines"></div>
@@ -67,8 +99,23 @@
           <div class="los-line" id="losLine" title="Line of scrimmage"></div>
           <div class="fd-line" id="fdLine" title="First down line"></div>
 
+          <!-- Chain crew icon -->
+          <div class="chain-crew" id="chainCrew" title="Chain crew"></div>
+
+          <!-- Ball trail layer -->
+          <div class="trail-layer" id="trailLayer" aria-hidden="true"></div>
+
+          <!-- Player icons -->
+          <div class="picon qb" id="qbIcon">QB</div>
+          <div class="picon rb" id="rbIcon">RB</div>
+          <div class="picon def" id="defIcon">DEF</div>
+
           <div class="ball" id="ball" title="Ball"></div>
 
+          <!-- Replay tag -->
+          <div class="replay-tag" id="replayTag">REPLAY</div>
+
+          <!-- Overlay (lower third) -->
           <div class="overlay" id="overlay">
             <div class="overlay-card" id="overlayCard">
               <div class="overlay-title" id="overlayTitle">READY</div>
@@ -76,6 +123,7 @@
             </div>
           </div>
 
+          <!-- Confetti / fireworks -->
           <div class="confetti" id="confetti"></div>
         </div>
       </section>
@@ -92,6 +140,17 @@
           <div class="hint" id="cpuHint">
             CPU chooses plays on Broncos drives. You still roll/type the dice.
           </div>
+        </div>
+
+        <div class="panel-block">
+          <div class="panel-title">Weather</div>
+          <div class="btn-row">
+            <button class="btn" id="wxClear">Clear</button>
+            <button class="btn" id="wxSnow">Snow</button>
+            <button class="btn" id="wxRain">Rain</button>
+            <button class="btn" id="wxNight">Night</button>
+          </div>
+          <div class="hint">Visual only. No gameplay impact.</div>
         </div>
 
         <div class="panel-block">
