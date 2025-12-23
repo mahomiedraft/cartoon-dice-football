@@ -53,8 +53,11 @@
 
           <div class="yardlines" id="yardlines"></div>
 
+          <!-- TV lines -->
+          <div class="los-line" id="losLine" title="Line of scrimmage"></div>
+          <div class="fd-line" id="fdLine" title="First down line"></div>
+
           <div class="ball" id="ball" title="Ball"></div>
-          <div class="chain" id="chain" title="Line to gain"></div>
 
           <div class="overlay" id="overlay">
             <div class="overlay-card" id="overlayCard">
@@ -69,14 +72,16 @@
 
       <section class="panel">
         <div class="panel-block">
-          <div class="panel-title">Play Call</div>
+          <div class="panel-title">Play Call (Chiefs Only)</div>
           <div class="btn-row">
             <button class="btn" id="btnRun">Run</button>
             <button class="btn" id="btnPass">Pass</button>
             <button class="btn" id="btnPunt">Punt</button>
             <button class="btn" id="btnFG">Field Goal</button>
           </div>
-          <div class="hint" id="cpuHint">CPU will choose on its turn automatically.</div>
+          <div class="hint" id="cpuHint">
+            CPU chooses plays on Broncos drives. You still roll/type the dice.
+          </div>
         </div>
 
         <div class="panel-block">
@@ -95,13 +100,15 @@
               <input id="inD20" inputmode="numeric" placeholder="1-20" />
             </label>
           </div>
+
           <div class="hint">
-            D10 only matters on D6 = 3/4/5. D20 only matters when chaos triggers (game will tell you).
+            D10 matters on D6 = 3/4/5. D20 is required for Chaos + Field Goals.
+            On BIG PLAY (D6=5), D20=20 triggers a rare breakaway highlight.
           </div>
 
           <div class="btn-row">
             <button class="btn primary" id="btnResolve">Resolve Play</button>
-            <button class="btn ghost" id="btnNewDrive">New Game</button>
+            <button class="btn ghost" id="btnNewGame">New Game</button>
           </div>
         </div>
 
@@ -116,4 +123,3 @@
   <script src="./game.js"></script>
 </body>
 </html>
-
