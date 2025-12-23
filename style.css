@@ -12,26 +12,29 @@
   text-shadow: 0 4px 10px rgba(0,0,0,.45);
 }
 
+/* CHIEFS — LEFT ENDZONE (RED) */
 .endzone.left{
   left:0;
   background: linear-gradient(
     180deg,
-    #c8102e,
+    #c8102e,   /* Chiefs red */
     #a50d25
   );
   border-right:2px solid rgba(255,255,255,.25);
 }
 
+/* BRONCOS — RIGHT ENDZONE (ORANGE) */
 .endzone.right{
   right:0;
   background: linear-gradient(
     180deg,
-    #fb4f14,
+    #fb4f14,   /* Broncos orange */
     #c63d10
   );
   border-left:2px solid rgba(255,255,255,.25);
 }
 
+/* Vertical text */
 .endzone span{
   transform: rotate(-90deg);
 }
