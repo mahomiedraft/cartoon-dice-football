@@ -1,1 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cartoon Dice Football</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <div class="badge">🏈</div>
+        <div>
+          <div class="h1">Cartoon Dice Football</div>
+          <div class="sub">Chiefs (You) vs Broncos (CPU)</div>
+        </div>
+      </div>
+
+      <div class="scoreboard">
+        <div class="sb-row">
+          <div class="team">
+            <div class="team-name" id="homeName">CHIEFS</div>
+            <div class="team-score" id="homeScore">0</div>
+          </div>
+
+          <div class="meta">
+            <div class="meta-big">
+              <span id="quarter">Q1</span>
+              <span class="dot">•</span>
+              <span id="clock">05:00</span>
+            </div>
+            <div class="meta-small">
+              <span id="possession">Chiefs ball</span>
+              <span class="dot">•</span>
+              <span id="situation">1st &amp; 10 @ CHI 25</span>
+            </div>
+          </div>
+
+          <div class="team">
+            <div class="team-name" id="awayName">BRONCOS</div>
+            <div class="team-score" id="awayScore">0</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="field-wrap">
+        <div class="field" id="field">
+          <div class="endzone left"><span>CHIEFS</span></div>
+          <div class="endzone right"><span>BRONCOS</span></div>
+
+          <div class="yardlines" id="yardlines"></div>
+
+          <div class="ball" id="ball" title="Ball"></div>
+          <div class="chain" id="chain" title="Line to gain"></div>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-card" id="overlayCard">
+              <div class="overlay-title" id="overlayTitle">READY</div>
+              <div class="overlay-sub" id="overlaySub">Enter dice and run a play.</div>
+            </div>
+          </div>
+
+          <div class="confetti" id="confetti"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-block">
+          <div class="panel-title">Play Call</div>
+          <div class="btn-row">
+            <button class="btn" id="btnRun">Run</button>
+            <button class="btn" id="btnPass">Pass</button>
+            <button class="btn" id="btnPunt">Punt</button>
+            <button class="btn" id="btnFG">Field Goal</button>
+          </div>
+          <div class="hint" id="cpuHint">CPU will choose on its turn automatically.</div>
+        </div>
+
+        <div class="panel-block">
+          <div class="panel-title">Enter Your Dice (manual)</div>
+          <div class="dice-row">
+            <label class="dice">
+              <span>D6</span>
+              <input id="inD6" inputmode="numeric" placeholder="1-6" />
+            </label>
+            <label class="dice">
+              <span>D10</span>
+              <input id="inD10" inputmode="numeric" placeholder="1-10" />
+            </label>
+            <label class="dice">
+              <span>D20</span>
+              <input id="inD20" inputmode="numeric" placeholder="1-20" />
+            </label>
+          </div>
+          <div class="hint">
+            D10 only matters on D6 = 3/4/5. D20 only matters when chaos triggers (game will tell you).
+          </div>
+
+          <div class="btn-row">
+            <button class="btn primary" id="btnResolve">Resolve Play</button>
+            <button class="btn ghost" id="btnNewDrive">New Game</button>
+          </div>
+        </div>
+
+        <div class="panel-block">
+          <div class="panel-title">Play-by-Play</div>
+          <div class="log" id="log"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
 
