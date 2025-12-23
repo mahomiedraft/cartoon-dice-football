@@ -56,33 +56,46 @@ const el = {
 
 // Yardlines: draw 10 segments between endzones
 function renderYardlines() {
-  const count = 10;
+  const count = 10; // 10-yard increments
   const frag = document.createDocumentFragment();
-  for (let i = 0; i <= count; i++) {
+
+  for (let i = 1; i < count; i++) {
+    const pos = i / count;
+
+    // Yard line
     const line = document.createElement("div");
     line.style.position = "absolute";
-    line.style.left = `${(i / count) * 100}%`;
+    line.style.left = `${pos * 100}%`;
     line.style.top = "0";
     line.style.bottom = "0";
     line.style.width = "2px";
     line.style.background = "rgba(255,255,255,.22)";
     frag.appendChild(line);
 
+    // Yard number (10 20 30 40 50 40 30 20 10)
+    let yard;
+    if (i <= 5) {
+      yard = i * 10;
+    } else {
+      yard = (10 - i) * 10;
+    }
+
     const label = document.createElement("div");
     label.style.position = "absolute";
-    label.style.left = `${(i / count) * 100}%`;
-    label.style.top = "10px";
+    label.style.left = `${pos * 100}%`;
+    label.style.top = "12px";
     label.style.transform = "translateX(-50%)";
     label.style.fontWeight = "1000";
-    label.style.fontSize = "11px";
-    label.style.color = "rgba(255,255,255,.75)";
-    label.style.textShadow = "0 4px 10px rgba(0,0,0,.35)";
-    label.textContent = String(i * 10);
+    label.style.fontSize = "12px";
+    label.style.color = "rgba(255,255,255,.9)";
+    label.style.textShadow = "0 4px 10px rgba(0,0,0,.45)";
+    label.textContent = yard;
     frag.appendChild(label);
   }
+
+  el.yardlines.innerHTML = "";
   el.yardlines.appendChild(frag);
 }
-renderYardlines();
 
 // ---------- Game State ----------
 const initialState = () => ({
